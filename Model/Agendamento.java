@@ -1,5 +1,6 @@
 package Model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Agendamento {
@@ -81,6 +82,17 @@ public class Agendamento {
 
 	public String getHora() {
 		return hora;
+	}
+
+	public String getDataFormatada() {
+		if (data == null) {
+			return "";
+		}
+		return new SimpleDateFormat("dd/MM/yyyy").format(data);
+	}
+
+	public String getHoraFormatada() {
+		return hora == null ? "" : hora;
 	}
 
 	public void setHora(String hora) {
